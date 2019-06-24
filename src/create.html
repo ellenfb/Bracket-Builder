@@ -1,13 +1,50 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
-  <head>
-    <meta charset="utf-8">
-    <title>Bracket Creation</title>
-  </head>
+	<head>
+		<meta charset="utf-8">
+		<title>Bracket Creation</title>
+	</head>
   
-  <body>
-    
+	<body>
+		<div class="container-fluid" style="margin-top:5%;">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6 form-white">
+
+        <fieldset>
+        <legend >Create a Bracket</legend>
+		<div class="form-group">
+		
+            <label for="brkName">Bracket Name</label>
+            <input type="text" class="form-control" id="brkName" placeholder="New Bracket" required><br/>
+
+            <label for="brkDesc">Bracket Description</label>
+            <input type="text" class="form-control" id="brkDesc" placeholder="Description"><br/>
+
+            <label for="brkSize">Bracket Size</label>
+            <select class="form-control" id="brkSize">
+				<option id="brk4">Four</option>
+				<option id="brk8">Eight</option>
+				<option id="brk16">Sixteen</option>
+				<option id="brk32">Thirty-Two</option>
+				<option id="brk64">Sixty-Four</option>
+            </select><br/>
+
+            <label for="seeded">Seeded</label>
+            <select class="form-control" id="seeded">
+				<option id="seedYes">Yes</option>
+				<option id="seedNo">No</option>
+
+            </select><br/>
+            <input type="button" class="btn btn-danger" onclick="location.href='index.html';" value="Back" />
+            <button  type="submit" onclick="createBracket()" class="btn btn-primary">Create</button>
+
+          </div>
+        </fieldset>
+        </form>
+      </div>
+    <div class="col-sm-3"></div>
+  </div>
   </body>
   <script>
   
