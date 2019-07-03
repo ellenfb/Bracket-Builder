@@ -23,30 +23,71 @@
 
             <label for="brkSize">Bracket Size</label>
             <select class="form-control" id="brkSize">
-				<option id="brk4">Four</option>
-				<option id="brk8">Eight</option>
-				<option id="brk16">Sixteen</option>
-				<option id="brk32">Thirty-Two</option>
-				<option id="brk64">Sixty-Four</option>
+				<option value="brk4">Four</option>
+				<option value="brk8">Eight</option>
+				<option value="brk16">Sixteen</option>
+				<option value="brk32">Thirty-Two</option>
+				<option value="brk64">Sixty-Four</option>
             </select><br/>
 
             <label for="seeded">Seeded</label>
             <select class="form-control" id="seeded">
-				<option id="seedYes">Yes</option>
-				<option id="seedNo">No</option>
-
+				<option value="seedYes">Yes</option>
+				<option value="seedNo">No</option>
             </select><br/>
+			
+			<textarea name="names" cols="20" rows="4"></textarea><br/>
+			
             <input type="button" class="btn btn-danger" onclick="location.href='index.html';" value="Back" />
-            <button  type="submit" onclick="createBracket()" class="btn btn-primary">Create</button>
+            <button type="button" onclick="CreateBracket()" class="btn btn-primary">Create</button>
 
           </div>
         </fieldset>
         </form>
-      </div>
-    <div class="col-sm-3"></div>
-  </div>
-  </body>
-  <script>
+        </div>
+        <div class="col-sm-3"></div>
+        </div>
+    </body>
+	
+    <script type="text/javascript">
+	
+	const electron = require('electron');
+
+        function CreateBracket() {
+            
+			//size 4
+			if(brkSize.value === "brk4"){
+				alert("4");
+			}
+			
+			//size 8
+			else if(brkSize.value === "brk8"){
+				alert("8");
+			}
+			
+			//size 16
+			else if(brkSize.value === "brk16"){
+				alert("16");
+			}
+			
+			//size 32
+			else if(brkSize.value === "brk32"){
+				alert("32");
+			}
+			
+			//size64
+			else if(brkSize.value === "brk64"){
+				alert("64");
+			}
+			
+			//error
+			else{
+				alert("Shouldn't be seeing this.")
+			}
+			
+			//location.href="brkt.html";
+			
+        }
   
-</script>
+    </script>
 </html>
