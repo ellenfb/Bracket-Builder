@@ -27,7 +27,6 @@
 				<option value="brk8">Eight</option>
 				<option value="brk16">Sixteen</option>
 				<option value="brk32">Thirty-Two</option>
-				<option value="brk64">Sixty-Four</option>
             </select><br/>
 
             <label for="seeded">Seeded</label>
@@ -57,35 +56,28 @@
             
 			//size 4
 			if(brkSize.value === "brk4"){
-				alert("4");
+				location.href="images/bracket4.svg";
 			}
 			
 			//size 8
 			else if(brkSize.value === "brk8"){
-				alert("8");
+				location.href="images/bracket8.svg";
 			}
 			
 			//size 16
 			else if(brkSize.value === "brk16"){
-				alert("16");
+				location.href="images/bracket16.svg";
 			}
 			
 			//size 32
 			else if(brkSize.value === "brk32"){
-				alert("32");
-			}
-			
-			//size64
-			else if(brkSize.value === "brk64"){
-				alert("64");
+				location.href="images/bracket32.svg";
 			}
 			
 			//error
 			else{
 				alert("Shouldn't be seeing this.")
 			}
-			
-			//location.href="brkt.html";
 			
         }
   
