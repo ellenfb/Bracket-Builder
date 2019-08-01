@@ -35,7 +35,10 @@
 				<option value="seedNo">No</option>
             </select><br/>
 			
-			<textarea name="names" cols="20" rows="4"></textarea><br/>
+			<br>
+			<label for="entrants">Input bracket entrants with a comma separating each one:</label>
+			<br>
+			<textarea id="entrants" name="entrants" cols="20" rows="4"></textarea><br/>
 			
             <input type="button" class="btn btn-danger" onclick="location.href='index.html';" value="Back" />
             <button type="button" onclick="CreateBracket()" class="btn btn-primary">Create</button>
@@ -51,9 +54,21 @@
     <script type="text/javascript">
 	
 	const electron = require('electron');
+	const fs = require('fs');
 
         function CreateBracket() {
             
+			//create a file using the name of the bracket
+			var path = "user_brackets/";
+			var bracketName = brkName.value;
+			var ext = ".txt";
+			var fileName = path.concat(bracketName, ext);
+			
+			//write the user's bracket participants into a file
+			fs.writeFile(fileName, entrants.value, (error) => { 
+				if (error) throw err; 
+			}) 
+			
 			//size 4
 			if(brkSize.value === "brk4"){
 				location.href="images/bracket4.svg";
