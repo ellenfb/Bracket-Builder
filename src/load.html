@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Load a Bracket</title>
+	</head>
+  
+	<body>
+		<div class="container-fluid" style="margin-top:5%;">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6 form-white">
+
+        <fieldset>
+        <legend >Select a bracket to load</legend>
+		<div class="form-group">
+			
+            <input type="button" class="btn btn-danger" onclick="location.href='index.html';" value="Back" />
+			
+			<button onclick="document.getElementById('bracket_file').click();">Open</button>
+            <input id="bracket_file" type="file" name="br_name" style="display: none;" />
+			
+            <button type="button" onclick="LoadBracket()" class="btn btn-primary">Load</button>
+
+          </div>
+        </fieldset>
+        </form>
+        </div>
+        <div class="col-sm-3"></div>
+        </div>
+    </body>
+	
+    <script type="text/javascript">
+	
+	const electron = require('electron');
+	const fs = require('fs');
+
+        function LoadBracket() {
+		
+		    //getting the name of the selected file
+		    var bracketName = bracket_file.value.substring(12);
+            
+			//create a file using the name of the bracket
+			var path = "user_brackets/";
+			var fileName = path.concat(bracketName);
+			
+			//write the user's bracket participants into a file
+			fs.readFile(fileName, 'utf-8', (error, text) => { 
+				if (error) throw err; 
+				
+				alert(text);
+			}) 
+			
+        }
+  
+    </script>
+</html>
